@@ -44,12 +44,13 @@ grunt.initConfig({
     uglify: {
         options: {
             sourceMap: true,
-            sourceMapName: 'build/<%= pkg.version %>/js/youngleaders.js.map',
+            sourceMapName: 'build/<%= pkg.version %>/js/realjt.js.map',
             banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
         },
         build: {
             src: [
                 'bower_components/jquery/dist/jquery.js',
+                'bower_components/instafeed.js/instafeed.js',
                 'src/javascripts/bootstrap.min.js',
                 'src/javascripts/realjt.js'
             ],

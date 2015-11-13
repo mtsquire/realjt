@@ -1,12 +1,25 @@
 $(document).ready(function() {
-    $('.social-buttons__facebook').click(function(e) {
-        e.preventDefault();
-        window.open("https://www.facebook.com/sharer/sharer.php?u=fidv.org/youngleaders", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=10, width=600, height=400");
-    });
 
-    $('.social-buttons__twitter').click(function(e) {
-        e.preventDefault();
-        window.open("https://twitter.com/intent/tweet?text=Buy%20your%20tickets%20to%20the%20FIDV%20Winter Gala&url=https%3A%2F%2Ffidv.org%2Fyoungleaders&hashtags=FIDVwintergala
-", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=10, left=10, width=600, height=400");
+
+    var loadButton = document.getElementById('load-more');
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'realjt',
+        clientId: '9797d07c675f4d84b674ed422dcbaf1b',
+        resolution: 'standard_resolution',
+        template: '<div class="col-sm-3"><a href="{{link}}"><img src="{{image}}" class="img-responsive"/></a></div>',
+        // every time we load more, run this function
+        after: function() {
+            // disable button if no more results to load
+            if (!this.hasNext()) {
+                loadButton.setAttribute('disabled', 'disabled');
+            }
+        },
+    });
+    feed.run();
+
+    // bind the load more button
+    loadButton.addEventListener('click', function() {
+        feed.next();
     });
 });
