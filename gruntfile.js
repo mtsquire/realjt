@@ -6,10 +6,10 @@ grunt.initConfig({
     less: {
         project: {
             options: {
-                paths: ['src/stylesheets/less', 'src/stylesheets/custom'],
+                paths: ['src/stylesheets/less'],
                 yuicompress: true
             },
-            src: ['src/stylesheets/less/index.less', 'src/stylesheets/less/custom.less'],               
+            src: ['src/stylesheets/less/index.less', 'src/stylesheets/less/fancybox.less', 'src/stylesheets/less/custom.less'],               
             dest: 'src/stylesheets/style.css'
         }
     },
@@ -51,6 +51,7 @@ grunt.initConfig({
             src: [
                 'bower_components/jquery/dist/jquery.js',
                 'bower_components/instafeed.js/instafeed.js',
+                'bower_components/fancybox/source/jquery.fancybox.js',
                 'src/javascripts/bootstrap.min.js',
                 'src/javascripts/realjt.js'
             ],

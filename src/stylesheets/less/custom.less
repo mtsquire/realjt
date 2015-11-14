@@ -1,6 +1,40 @@
 @import "bower_components/bootstrap/less/variables.less";
 @import "bower_components/bootstrap/less/mixins/grid.less";
 
-#insta-feed {
-    .make-row();
+body {
+    background: #000;
+}
+
+.instafeed {
+    &__row {
+        .make-row();
+    }
+
+    &__column {
+        .make-sm-column(12);
+    }
+}
+
+header {
+    width: 100%;
+    background: #222;
+    margin-bottom: @grid-gutter-width;
+    margin-top: 0px;
+}
+
+.realjt-header__heading {
+    padding: 70px 0;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    text-align: center;
+}
+
+.instafeed__image {
+    .make-sm-column(3);
+    margin-bottom: @grid-gutter-width;
+}
+
+.btn[disabled] {
+    display: none;
 }
