@@ -17,9 +17,10 @@ body {
 
 header {
     width: 100%;
-    background: #222;
     margin-bottom: @grid-gutter-width;
     margin-top: 0px;
+    background: url(../img/nyc-skyline.jpg) top center no-repeat;
+    background-size: cover;
 }
 
 .realjt-header__heading {
@@ -28,6 +29,7 @@ header {
     font-family: 'Montserrat', sans-serif;
     margin: 0px;
     text-align: center;
+    background: rgba(34, 34, 34, 0.8)
 }
 
 .instafeed__image {
@@ -37,4 +39,11 @@ header {
 
 .btn[disabled] {
     display: none;
+}
+
+footer {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #fff;
+    padding: @grid-gutter-width 0;
 }
